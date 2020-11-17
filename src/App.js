@@ -1,19 +1,16 @@
-// import logo from './logo.svg';
+import 'rsuite/dist/styles/rsuite-default.css';
 import './App.css';
-import {LoginForm} from './components/LoginForm';
-import {SignUpForm} from './components/signUpForm';
-import {Header} from './components/Header';
-import {SearchBar} from './components/SearchBar';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/Store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { Main } from './components/Main';
 
-function App() {
+export default function App() {
   return (
-    <div className="MainBody">
-      <Header />
-      <SearchBar />
-    {/* <LoginForm /> */}
-    {/* <SignUpForm /> */}
-    </div>
-  );
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Main />
+      </PersistGate>
+    </Provider>
+  )
 }
-
-export default App;

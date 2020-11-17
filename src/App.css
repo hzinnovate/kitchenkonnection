@@ -7,6 +7,9 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.signUpButton{
+  margin-top: 20px !important;
+}
 .loginButton div{
   padding: 5px; color: white; text-align: center
 }
@@ -28,6 +31,10 @@
 }
 .nameInput{
   outline: none; border: none; border-bottom: 1px solid black; width: 90%; height: 50px; margin: 10px
+}
+.signUp{
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
 }
 .remmemberMeSelector{
   text-align: left;
@@ -66,7 +73,9 @@
   justify-content: center;
 }
 .socialSignUpButtons div{
-  margin: 15px;
+  margin: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
   cursor: pointer;
 }
 .headerContainer{
@@ -75,13 +84,14 @@ justify-content: space-between;
 }
 .headerContainer div{
   display: flex;
+  margin-right: 20px;
 }
-.headerContainer div div{
+/* .headerContainer div div{
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
   cursor: pointer;
-}
+} */
 .headerButton{
   display: flex;
   border: 1px solid;
