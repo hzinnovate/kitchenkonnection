@@ -13,7 +13,18 @@ export const login = (email, password) => {
         auth.signInWithEmailAndPassword(email, password).then((e) => {
             let uid = e.user.uid
             database.ref(`users/${uid}`).once('value').then((e) => {
-                resolve(e.val())
+                let data = e.val()
+                if (data) {
+                    data.done = true
+                    resolve(data)
+                } else {
+                    let obj = {
+                        email,
+                        uid,
+                        done: false
+                    }
+                    resolve(obj)
+                }
             })
         }).catch(e => {
             reject(e)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Modal, Alert } from 'rsuite';
+import { Button, Modal, Alert, Dropdown } from 'rsuite';
 
 export const ModalForSignUpInfo = ({ dataObj, finalData, show }) => {
   const [name, setName] = useState('')
@@ -7,15 +7,18 @@ export const ModalForSignUpInfo = ({ dataObj, finalData, show }) => {
   const [city, setCity] = useState('')
   const [country, setCountry] = useState('')
   const [number, setNumber] = useState('')
-
+  const [type, setType] = useState('Supplier')
   useEffect(() => {
-      if(dataObj.name && dataObj.name !== ''){
-        setName(dataObj.name)
-      }
-      if(dataObj.number && dataObj.number !== ''){
-        setNumber(dataObj.number)
-      }
-  },[dataObj])
+    if (dataObj.name && dataObj.name !== '') {
+      setName(dataObj.name)
+    }
+    if (dataObj.number && dataObj.number !== '') {
+      setNumber(dataObj.number)
+    }
+    if (dataObj.type && dataObj.type !== '') {
+      setType(dataObj.type)
+    }
+  }, [dataObj])
 
   const letData = () => {
     if (name !== '' && address !== '' && city !== '' && country !== '' && number !== '') {
@@ -24,6 +27,7 @@ export const ModalForSignUpInfo = ({ dataObj, finalData, show }) => {
       dataObj.city = city
       dataObj.country = country
       dataObj.number = number
+      dataObj.type = type
       finalData(dataObj)
     } else {
       Alert.error('Please fill all fields to Login your Created User')
@@ -37,7 +41,11 @@ export const ModalForSignUpInfo = ({ dataObj, finalData, show }) => {
           <Modal.Title>Add Some Info about your Kitchen</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input value={name} type='text' placeholder='Kitchen Name' className='nameInput signUp' onChange={(e) => setName(e.target.value)} />
+          <Dropdown title={`Account type ${type}`} trigger="hover" onSelect={() => setType(type === 'Supplier' ? 'Customer' : 'Supplier')}>
+            <Dropdown.Item>Account type Supplier</Dropdown.Item>
+            <Dropdown.Item>Account type Customer</Dropdown.Item>
+          </Dropdown>
+          <input value={name} type='text' placeholder='Name' className='nameInput signUp' onChange={(e) => setName(e.target.value)} />
           <input value={number} type='number' placeholder='Number' className='nameInput signUp' onChange={(e) => setNumber(e.target.value)} />
           <input value={address} type='text' placeholder='Address' className='nameInput signUp' onChange={(e) => setAddress(e.target.value)} />
           <input value={city} type='text' placeholder='City' className='nameInput signUp' onChange={(e) => setCity(e.target.value)} />
