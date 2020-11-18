@@ -1,11 +1,11 @@
 import React from 'react'
 import { FaFacebook, FaGooglePlus } from "react-icons/fa";
-import { AiFillTwitterCircle } from "react-icons/ai";
+// import { AiFillTwitterCircle } from "react-icons/ai";
 import myApp from 'firebase'
 
 export const SocialSignUpLinks = ({socialSignIn}) => {
     var google = new myApp.auth.GoogleAuthProvider();
-    var twitter = new myApp.auth.TwitterAuthProvider();
+    // var twitter = new myApp.auth.TwitterAuthProvider();
     var facebook = new myApp.auth.FacebookAuthProvider();
     
     return (

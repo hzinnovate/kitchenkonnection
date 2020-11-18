@@ -1,6 +1,6 @@
 import firebase from '../../config/firebase';
 const auth = firebase.auth();
-const storage = firebase.storage();
+// const storage = firebase.storage();
 const database = firebase.database();
 
 export const logout = () => {
