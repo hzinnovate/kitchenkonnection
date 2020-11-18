@@ -12,7 +12,7 @@ export const SocialSignUpLinks = ({socialSignIn}) => {
         <div className='socialSignUpButtons'>
             <div onClick={() => {socialSignIn(facebook)}}><FaFacebook  size={25} color='blue' /></div>
             <div onClick={() => {socialSignIn(google)}}><FaGooglePlus size={25} color='red' /></div>
-            <div onClick={() => {socialSignIn(twitter)}}><AiFillTwitterCircle size={30} color='skyblue' /></div>
+            {/* <div onClick={() => {socialSignIn(twitter)}}><AiFillTwitterCircle size={30} color='skyblue' /></div> */}
         </div>
     )
 }

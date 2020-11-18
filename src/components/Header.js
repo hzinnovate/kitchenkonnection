@@ -13,40 +13,44 @@ const Header = (props) => {
     return (
         <div className='headerContainer'>
             <h2>LOGO</h2>
-            <div>
-                <div>
+            <div className='headerMain'>
+                <div className='linkButtons'>
                     <Button appearance="link" style={{ color: 'black' }}>
-                        <div><MdWatchLater size={20} color='red' /> Make Query 24/7</div>
+                        <div><MdWatchLater size={18} color='red' /><span>Make Query 24/7</span></div>
                     </Button>
                 </div>
-                <div>
+                <div className='linkButtons'>
                     <Button appearance="link" style={{ color: 'black' }}>
                         <div>
-                            <MdCall size={20} color='red' /> 021 3999 2345
+                            <MdCall size={18} color='red' /><span>021 3999 2345</span>
                         </div>
                     </Button>
                 </div>
-                <div>
-                    <Button appearance="ghost" style={{ color: 'black', borderColor: 'black' , height: '40px', marginTop: '5px'  }}>
-                        <div><FaShoppingBasket size={20} /> Orders</div>
+                <div className='linkButtons'>
+                    <Button appearance="ghost" size="sm" style={{ color: 'black', borderColor: 'black' }}>
+                        <div><FaShoppingBasket size={18} /><span>Orders</span></div>
                     </Button>
                 </div>
-                <div>
+                <div className='linkButtons'>
                     {kitchenKonnectionUser ?
-                        <Button appearance="ghost" style={{ color: 'black', borderColor: 'black' , height: '40px', marginTop: '5px' }}>
-                            <div><FaUser size={20} /> Hi, {kitchenKonnectionUser.name}</div>
+                        <Button appearance="ghost" size="sm" style={{ color: 'black', borderColor: 'black' }}>
+                            <div><FaUser size={18} /><span>Hi, {kitchenKonnectionUser.name}</span></div>
                         </Button>
                         :
-                        <Button onClick={() => setModalVisible(!modalVisible)} appearance="ghost" style={{ color: 'black', borderColor: 'black' , height: '40px', marginTop: '5px' }}>
-                            <div><FaUser size={20} /> Login </div>
+                        <Button
+                            onClick={() => setModalVisible(!modalVisible)} appearance="ghost"
+                            style={{ color: 'black', borderColor: 'black' }} size="sm" >
+                            <div><FaUser size={18} /><span>Login</span> </div>
                         </Button>
                     }
                 </div>
-                <div>
-                    {kitchenKonnectionUser && <Button onClick={() => logout()} appearance="ghost" style={{ color: 'black', borderColor: 'black'  , height: '40px', marginTop: '5px'}}>
-                        <div><FaUser size={20} /> logout </div>
-                    </Button>}
-                </div>
+                {kitchenKonnectionUser && <div className='linkButtons'>
+                     <Button
+                        onClick={() => logout()} appearance="ghost" size="sm"
+                        style={{ color: 'black', borderColor: 'black' }}>
+                        <div><FaUser size={18} /><span>logout</span> </div>
+                    </Button>
+                </div>}
             </div>
         </div>
     )

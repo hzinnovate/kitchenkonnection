@@ -42,7 +42,9 @@ const LoginForm = (props) => {
                 </div>
                 <div className='labelTextForAccount' >If you don't have an account?</div>
                 <div className='accountCreateLinks' >
-                    <span onClick={() => openSignUp("Supplier")}>Sign Up As Supplier</span> | <span onClick={() => openSignUp('Customer')}>Sign Up As Customer</span>
+                    <span onClick={() => openSignUp("Supplier")}>Sign Up As Supplier</span> | <span 
+                    // onClick={() => openSignUp('Customer')}
+                    >Sign Up As Customer</span>
                 </div>
             </form>
         </div>

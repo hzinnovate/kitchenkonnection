@@ -6,6 +6,9 @@ const reducer = (state = {}, action) => {
         case 'REMOVE_USER' : {
             return {...state, kitchenKonnectionUser: null}
         }
+        case 'ALL_USERS' : {
+            return {...state, kitchenKonnectionAllUsers: action.allUsers}
+        }
         default: {
             return state
         }

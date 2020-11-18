@@ -7,6 +7,7 @@ export const logout = () => {
 
 }
 
+
 export const login = (email, password) => {
     return new Promise((resolve, reject) => {
         auth.signInWithEmailAndPassword(email, password).then((e) => {
@@ -20,14 +21,26 @@ export const login = (email, password) => {
     })
 }
 
+export const setUserData = (dataObj) => {
+    return new Promise((resolve, reject) => {
+        database.ref(`users/${dataObj.uid}`).set(dataObj).then(() => {
+            resolve(dataObj)
+        }).catch(e => {
+            reject(e)
+        });
+    })
+}
 
-export const signUp = (email, password, name, number, type) => {
+export const signUp = (email, password, type) => {
     return new Promise((resolve, reject) => {
         auth.createUserWithEmailAndPassword(email, password).then(e => {
             let uid = e.user.uid
-            database.ref(`users/${uid}`).set({ email, name, number, type, uid }).then(() => {
-                resolve(`Dear ${name} user created, now you can login with email and password`)
-            })
+            let obj = {
+                email,
+                uid,
+                type
+            }
+            resolve(obj)
         }).catch(e => {
             reject(e)
         });
@@ -47,9 +60,7 @@ export const signUpWithSocial = (provider, type) => {
                 uid: user.uid,
                 type
             }
-            database.ref(`users/${obj.uid}`).set(obj).then(() => {
-                resolve(obj)
-            })
+            resolve(obj)
         }).catch(function (error) {
             reject(error)
         });

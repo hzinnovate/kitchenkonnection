@@ -81,10 +81,22 @@
 .headerContainer{
 display: flex;
 justify-content: space-between;
+align-items: center;
 }
-.headerContainer div{
+.headerMain{
   display: flex;
-  margin-right: 20px;
+align-items: center;
+}
+.linkButtons{
+  margin-left: 20px;
+}
+.linkButtons div{
+  display: flex;
+}
+.linkButtons span{
+  padding-left: 5px;
+  font-size: 14px;
+  display: inline-block
 }
 /* .headerContainer div div{
   margin-left: 20px;
@@ -103,5 +115,69 @@ justify-content: space-between;
 }
 
 .MainBody{
-  padding: 20px 100px 0px 100px;
+  margin: 20px 100px 0px 100px;
+}
+.activeText{
+  color: rgb(255, 27, 65);
+}
+.text{
+  padding: 5px;
+}
+.toggle{
+background: red;
+}
+.toggle:hover{
+  background-color: red;
+}
+.mainBtn:hover{
+  background-color: red;
+  color: white;
+}
+.mainBtn{
+  color: black;
+}
+.cardImage{
+    background-image: url("https://th.bing.com/th/id/OIP.M3gR1iUOsiWf7htgiThV1gHaE7?pid=Api&rs=1");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    width: 270px; 
+    height: 180px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.cardBottomLabel{
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.800);
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardSpace{
+  overflow: scroll; 
+  overflow-X: hidden; 
+  height: 380px; 
+  width: 100%; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  justify-content: center
+}
+.cardSpace::-webkit-scrollbar {
+  width: 0.5em;
+}
+ 
+.cardSpace::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+}
+ 
+.cardSpace::-webkit-scrollbar-thumb {
+  background-color: rgb(32, 32, 32);
+  border-radius: 10px;
 }
