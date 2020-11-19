@@ -41,10 +41,10 @@ export const ModalForSignUpInfo = ({ dataObj, finalData, show }) => {
           <Modal.Title>Add Some Info about your Kitchen</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Dropdown title={`Account type ${type}`} trigger="hover" onSelect={() => setType(type === 'Supplier' ? 'Customer' : 'Supplier')}>
+          {/* <Dropdown title={`Account type ${type}`} trigger="hover" onSelect={() => setType(type === 'Supplier' ? 'Customer' : 'Supplier')}>
             <Dropdown.Item>Account type Supplier</Dropdown.Item>
             <Dropdown.Item>Account type Customer</Dropdown.Item>
-          </Dropdown>
+          </Dropdown> */}
           <input value={name} type='text' placeholder='Name' className='nameInput signUp' onChange={(e) => setName(e.target.value)} />
           <input value={number} type='number' placeholder='Number' className='nameInput signUp' onChange={(e) => setNumber(e.target.value)} />
           <input value={address} type='text' placeholder='Address' className='nameInput signUp' onChange={(e) => setAddress(e.target.value)} />

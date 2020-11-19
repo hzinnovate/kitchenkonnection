@@ -1,4 +1,4 @@
-const reducer = (state = {}, action) => {
+const authReducer = (state = {}, action) => {
     switch(action.type){
         case 'UPDATE_USER' : {
             return {...state, kitchenKonnectionUser: action.user}
@@ -15,4 +15,4 @@ const reducer = (state = {}, action) => {
     }
 }
 
-export default reducer
+export default authReducer
