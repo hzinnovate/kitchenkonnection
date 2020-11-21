@@ -5,7 +5,7 @@ import SignUpForm from './signUpForm';
 
 export const DrawerModal = ({ modalVisible, setModalVisible }) => {
   const [loginSignUp, setLoginSignUp] = useState("login")
-  const [type, setType] = useState('')
+  const [type, setType] = useState('Supplier')
   return (
     <Drawer
       size="xs"
